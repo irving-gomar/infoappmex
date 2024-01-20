@@ -10,9 +10,55 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_01_20_005706) do
+ActiveRecord::Schema[7.0].define(version: 2024_01_20_012315) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bookings", force: :cascade do |t|
+    t.date "date"
+    t.bigint "user_id", null: false
+    t.bigint "shelter_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["shelter_id"], name: "index_bookings_on_shelter_id"
+    t.index ["user_id"], name: "index_bookings_on_user_id"
+  end
+
+  create_table "ongs", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+    t.string "address"
+    t.float "longitude"
+    t.float "latitude"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_ongs_on_user_id"
+  end
+
+  create_table "services", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+    t.date "date_from"
+    t.date "date_to"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_services_on_user_id"
+  end
+
+  create_table "shelters", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+    t.string "address"
+    t.float "longitude"
+    t.float "latitude"
+    t.integer "max_capacity"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_shelters_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -27,4 +73,9 @@ ActiveRecord::Schema[7.0].define(version: 2024_01_20_005706) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "bookings", "shelters"
+  add_foreign_key "bookings", "users"
+  add_foreign_key "ongs", "users"
+  add_foreign_key "services", "users"
+  add_foreign_key "shelters", "users"
 end
