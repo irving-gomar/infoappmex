@@ -3,4 +3,10 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
+enum role: {
+  0 => "ONG",
+  1 => "Voluntario",
+  2 => "Migrante"
+}
 end
