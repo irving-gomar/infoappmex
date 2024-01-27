@@ -4,11 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-enum role: {
-  0 => "ONG",
-  1 => "Voluntario",
-  2 => "Migrante"
-}
+  validates :role, presence: true, inclusion: { in: %w[ONG Voluntario Migrante] }
 
   has_many :messages
   has_many :volunteerings
