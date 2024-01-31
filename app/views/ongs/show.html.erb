@@ -27,6 +27,42 @@
           <% end %>
         </div>
       </div>
+    <div class="row">
+      <div>
+        <h3 class="mt-4">Shelters</h3>
+        <div class="row">
+          <% if @ong.shelters.empty? %>
+            <div class="col-md-4">
+              <%# create a first shelter %>
+              <%= link_to new_ong_shelter_path(@ong), class: 'btn btn-primary' do %>
+                <div class="card mb-4 shadow-sm">
+                  <div class="card-body">
+                    <p class="card-text">
+                      <strong>Create a new shelter</strong>
+                    </p>
+                  </div>
+                </div>
+              <% end %>
+            </div>
+          <% else %>
+            <% @ong.shelters.each do |shelter| %>
+              <div class="col-md-4">
+                <%= link_to shelter_path(shelter), class: 'btn btn-primary' do %>
+                <div class="card mb-4 shadow-sm">
+                  <div class="card-body">
+                    <p class="card-text">
+                      <strong>Name:</strong> <%= shelter.name %><br>
+                      <strong>Address:</strong> <%= shelter.address %><br>
+                    </p>
+                  </div>
+                </div>
+                <% end %>
+              </div>
+            <% end %>
+          <% end %>
+      </div>
+
+    </div>
     </div>
   </div>
 </div>
