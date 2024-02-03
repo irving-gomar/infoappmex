@@ -1,0 +1,45 @@
+<style>
+  .card {
+    transition: all .2s ease;
+  }
+  .card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 11px rgba(33,33,33,.2);
+  }
+
+</style>
+<div class="container text-center mt-4">
+  <div class="p-3">
+    <h1>ONGs</h1>
+    <hr class="solid">
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <% @ongs.each do |ong| %>
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="card shadow bg-info" style="border-radius: 20px">
+            <%= link_to ong_path(ong), class: "text-body text-decoration-none" do %>
+              <%= image_tag(ong.photo, class: "shadow card-img-top m-3", style: "border-radius: 50%; max-height: 150px; width: auto" )%>
+              <div class="card-body">
+                <h5 class="card-title"><%= ong.name %></h5>
+                <p class="card-text"><%= truncate(ong.description, length: 100) %></p>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+  
+  <div class="row">
+    <div class="col-md-12">
+      <div class="mb-4">
+        <%= link_to new_ong_path, class: "btn btn-info" do %>
+          Registrar ONG
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

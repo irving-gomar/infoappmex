@@ -1,0 +1,12 @@
+<%= simple_form_for @ong do |f| %>
+  <%= f.input :name %>
+  <%= f.input :photo, as: :file, label: "Logo"%>
+  <%= f.input :description, as: :text %>
+  <%= f.input :address %>
+  <%= f.input :website %>
+  <%= f.button :submit %>
+<% end %>
+
+<%= link_to ongs_path, class: 'btn btn-info' do %>
+    Back
+<% end %>
