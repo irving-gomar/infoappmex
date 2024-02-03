@@ -2,8 +2,7 @@ class SheltersController < ApplicationController
   before_action :set_ong, only: [:new, :create] #Para vistas (@ong, @shelter)
 
   def index
-    @ong = Ong.find(params[:id])
-    @shelters = @ong.shelters
+    @shelters = Shelter.all
   end
 
   def show
@@ -17,7 +16,14 @@ class SheltersController < ApplicationController
   def create
     @shelter = Shelter.new(shelter_params)
     @shelter.ong = @ong
-    @shelter.save!
+    if @shelter.save
+      @shelter.max_capacity.times do
+        Bed.create(shelter: @shelter)
+      end
+      redirect_to ong_path(@ong)
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   def edit

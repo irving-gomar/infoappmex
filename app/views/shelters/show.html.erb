@@ -3,6 +3,7 @@
   <p class="card-text">
     <strong>Description:</strong> <%= @shelter.description %><br>
     <strong>Address:</strong> <%= @shelter.address %><br>
+    <strong>Max capacity:</strong> <%= @shelter.max_capacity %>
   </p>
   <%= link_to edit_shelter_path(@shelter), class: 'btn btn-primary mr-2' do %>
     Edit

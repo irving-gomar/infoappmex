@@ -5,12 +5,12 @@ Rails.application.routes.draw do
 
   # ONG
   resources :ongs, only: [:index, :show, :new, :create, :edit, :update, :destroy] do
-    resources :shelters, only: [:index, :new, :create]
+    resources :shelters, only: [:new, :create]
   end
 
 
   
-  resources :shelters, only: [:show, :edit, :update, :destroy] do
+  resources :shelters, only: [:index, :show, :edit, :update, :destroy] do
     resources :beds, only: [:new, :create]
   end
 

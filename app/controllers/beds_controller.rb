@@ -1,5 +1,5 @@
 class BedsController < ApplicationController
-  before_action :set_bed, only: [:new, :create] #Para vistas (@bed, @bed)
+  before_action :set_shelter, only: [:new, :create]
 
   def index
     @shelter = Shelter.find(params[:id])
