@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_01_24_033749) do
+ActiveRecord::Schema[7.0].define(version: 2024_02_03_203749) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -47,6 +47,14 @@ ActiveRecord::Schema[7.0].define(version: 2024_01_24_033749) do
     t.bigint "shelter_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["shelter_id"], name: "index_beds_on_shelter_id"
+  end
+
+  create_table "beds", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "status", default: 0
+    t.bigint "shelter_id", null: false
     t.index ["shelter_id"], name: "index_beds_on_shelter_id"
   end
 
@@ -153,9 +161,9 @@ ActiveRecord::Schema[7.0].define(version: 2024_01_24_033749) do
   add_foreign_key "messages", "chats"
   add_foreign_key "messages", "users"
   add_foreign_key "ongs", "users"
-  add_foreign_key "posts", "ongs"
-  add_foreign_key "services", "ongs"
+  add_foreign_key "services", "users"
   add_foreign_key "shelters", "ongs"
+  add_foreign_key "posts", "ongs"
   add_foreign_key "volunteerings", "services"
   add_foreign_key "volunteerings", "users"
 end

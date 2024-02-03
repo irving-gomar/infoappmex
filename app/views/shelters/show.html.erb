@@ -1,0 +1,18 @@
+<div>
+  <h2 class="card-title"><%= @shelter.name %></h2>
+  <p class="card-text">
+    <strong>Description:</strong> <%= @shelter.description %><br>
+    <strong>Address:</strong> <%= @shelter.address %><br>
+    <strong>Max capacity:</strong> <%= @shelter.max_capacity %>
+  </p>
+  <%= link_to edit_shelter_path(@shelter), class: 'btn btn-primary mr-2' do %>
+    Edit
+  <% end %>
+  <!-- Delete link -->
+  <%= link_to shelter_path(@shelter), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: 'btn btn-danger' do %>
+    Delete
+  <% end %>
+  <%= link_to ong_path(@shelter.ong), class: 'btn btn-info' do %>
+    Back
+  <% end %>
+</div>
