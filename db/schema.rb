@@ -40,7 +40,8 @@ ActiveRecord::Schema[7.0].define(version: 2024_02_03_203749) do
     t.bigint "blob_id", null: false
     t.string "variation_digest", null: false
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
-    
+  end
+
   create_table "beds", force: :cascade do |t|
     t.boolean "status"
     t.bigint "shelter_id", null: false
@@ -152,12 +153,10 @@ ActiveRecord::Schema[7.0].define(version: 2024_02_03_203749) do
     t.index ["user_id"], name: "index_volunteerings_on_user_id"
   end
 
-  add_foreign_key "beds", "shelters"
-  add_foreign_key "bookings", "beds"
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "beds", "shelters"
-  add_foreign_key "bookings", "shelters"
+  add_foreign_key "bookings", "beds"
   add_foreign_key "bookings", "users"
   add_foreign_key "messages", "chats"
   add_foreign_key "messages", "users"

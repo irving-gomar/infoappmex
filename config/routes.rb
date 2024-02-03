@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   end
 
   resources :beds, only: [:show, :edit, :update, :destroy]
-
+  
   # Defines the root path route ("/")
   # root "articles#index"
 end
