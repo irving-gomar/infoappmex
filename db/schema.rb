@@ -43,6 +43,19 @@ ActiveRecord::Schema[7.0].define(version: 2024_02_03_225135) do
   end
 
   create_table "beds", force: :cascade do |t|
+<<<<<<< HEAD
+=======
+    t.boolean "status"
+    t.bigint "shelter_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["shelter_id"], name: "index_beds_on_shelter_id"
+  end
+
+  create_table "beds", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+>>>>>>> master
     t.integer "status", default: 0
     t.bigint "shelter_id", null: false
     t.datetime "created_at", null: false
@@ -53,11 +66,27 @@ ActiveRecord::Schema[7.0].define(version: 2024_02_03_225135) do
   create_table "bookings", force: :cascade do |t|
     t.date "date"
     t.bigint "user_id", null: false
-    t.bigint "shelter_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["shelter_id"], name: "index_bookings_on_shelter_id"
+    t.bigint "bed_id", null: false
+    t.index ["bed_id"], name: "index_bookings_on_bed_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
+  end
+
+  create_table "chats", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.string "content"
+    t.datetime "timestamp"
+    t.bigint "user_id", null: false
+    t.bigint "chat_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["chat_id"], name: "index_messages_on_chat_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
   create_table "ongs", force: :cascade do |t|
@@ -74,15 +103,25 @@ ActiveRecord::Schema[7.0].define(version: 2024_02_03_225135) do
     t.index ["user_id"], name: "index_ongs_on_user_id"
   end
 
+  create_table "posts", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.datetime "datetime"
+    t.bigint "ong_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["ong_id"], name: "index_posts_on_ong_id"
+  end
+
   create_table "services", force: :cascade do |t|
     t.string "name"
     t.string "description"
     t.date "date_from"
     t.date "date_to"
-    t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_services_on_user_id"
+    t.bigint "ong_id", null: false
+    t.index ["ong_id"], name: "index_services_on_ong_id"
   end
 
   create_table "shelters", force: :cascade do |t|
@@ -94,7 +133,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_02_03_225135) do
     t.integer "max_capacity"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "ong_id"
+    t.bigint "ong_id", null: false
     t.index ["ong_id"], name: "index_shelters_on_ong_id"
   end
 
@@ -111,12 +150,26 @@ ActiveRecord::Schema[7.0].define(version: 2024_02_03_225135) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "volunteerings", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "service_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["service_id"], name: "index_volunteerings_on_service_id"
+    t.index ["user_id"], name: "index_volunteerings_on_user_id"
+  end
+
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "beds", "shelters"
-  add_foreign_key "bookings", "shelters"
+  add_foreign_key "bookings", "beds"
   add_foreign_key "bookings", "users"
+  add_foreign_key "messages", "chats"
+  add_foreign_key "messages", "users"
   add_foreign_key "ongs", "users"
   add_foreign_key "services", "users"
   add_foreign_key "shelters", "ongs"
+  add_foreign_key "posts", "ongs"
+  add_foreign_key "volunteerings", "services"
+  add_foreign_key "volunteerings", "users"
 end
