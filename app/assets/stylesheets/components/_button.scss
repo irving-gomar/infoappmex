@@ -39,3 +39,17 @@
   background: linear-gradient(#147EFF, #0F67DA);
   color: white;
 }
+
+.btn-primary {
+  position: relative;
+  z-index: 100;
+  top: 100px;
+  background-color: #2C12C6;
+  color: white;
+  border-style: none;
+  border-radius: 40px;
+}
+
+.btn-primary:hover {
+  background-color: #8800E6;
+}
