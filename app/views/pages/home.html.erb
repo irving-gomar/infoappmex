@@ -1,7 +1,30 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/background.png);">
-  <div class="container">
-    <h1><strong>Conectamos servicios y ayuda a migrantes</strong>!</h1>
-    <p></p>
-    <a class="btn btn-flat" href="#">Soy Migrante</a>
+<div id="carouselExampleInterval" class="carousel slide carousel-fade" data-bs-ride="carousel">
+   <h1 class="h1-carousel m-5"><strong>Conectamos servicios y ayuda a migrantes</strong></h1>
+    <div class="btn-group m-5" role="group" aria-label="Basic example">
+    <button type="button" class="btn btn-primary btn-lg m-2">Soy Migrante</button>
+    <button type="button" class="btn btn-primary btn-lg m-2">Soy ONG</button>
+    <button type="button" class="btn btn-primary btn-lg m-2">Soy Voluntario</button>
+</div>
+  <div class="carousel-inner">
+    <div class="carousel-item active" data-bs-interval="3000">
+      <%= image_tag "alimentos.png", class:"img d-block w-100" %>
+    </div>
+    <div class="carousel-item" data-bs-interval="3000">
+      <%= image_tag "albergue.png", class:"img d-block w-100" %>
+    </div>
+    <div class="carousel-item" data-bs-interval="3000">
+      <%= image_tag "medicina.png", class:"img d-block w-100" %>
+    </div>
+    <div class="carousel-item" data-bs-interval="3000">
+      <%= image_tag "legal.png", class:"img d-block w-100" %>
+    </div>
   </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
 </div>
