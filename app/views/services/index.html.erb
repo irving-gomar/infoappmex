@@ -1,0 +1,49 @@
+<div class="container" style="">
+  <% @services.each do |service| %>
+    <div class="card" style="width=300px; height:100%;">
+      <div class="img">
+        <% case service.activity %>
+        <% when "Asistencia Medica" %>
+          <%= image_tag("app/assets/images/medicina.png", style: "object-fit: cover; aspect-ratio: 1/1; width: 300px; height:300px")%>
+        <% end %>
+
+    <div class="card" style="width=300px; height:100%;">
+      <div class="img">
+        <% case service.activity %>
+        <% when "Asistencia Alimentaria" %>
+          <%= image_tag("app/assets/images/alimentos.png", style: "object-fit: cover; aspect-ratio: 1/1; width: 300px; height:300px")%>
+        <% end %>
+
+    <div class="card" style="width=300px; height:100%;">
+      <div class="img">
+        <% case service.activity %>
+        <% when "Proteccion y Ayuda Legal" %>
+          <%= image_tag("app/assets/images/legal.png", style: "object-fit: cover; aspect-ratio: 1/1; width: 300px; height:300px")%>
+        <% end %>
+
+    <div class="card" style="width=300px; height:100%;">
+      <div class="img">
+        <% case service.activity %>
+        <% when "Albergue" %>
+          <%= image_tag("app/assets/images/albergue.png", style: "object-fit: cover; aspect-ratio: 1/1; width: 300px; height:300px")%>
+        <% end %>
+
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">
+          <%= service.activity %>
+        </h5>
+
+        <h5 class="card-title">
+          <%= service.price %>
+        </h5>
+        <p class="card-text">
+          <%= truncate(service.description, length: 50) %>
+        </p>
+      <%= link_to "Editar", edit_service_path(service.id), class: 'btn btn-info' %>
+      <%= link_to "Borrar", service_path(service.id), data:{turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: 'btn btn-danger' %>
+      <%= link_to 'Reserva', new_service_booking_path(service.id), class: 'btn btn-primary' %>
+    </div>
+  <% end %>
+
+<%= link_to 'Pulsa aqui para ofrecer un servicio de apoyo a migrantes', new_service_path, class: 'btn btn-primary' %>

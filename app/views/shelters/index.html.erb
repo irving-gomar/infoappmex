@@ -1,0 +1,19 @@
+<!-- FILEPATH: /home/barbararuizt/code/barbararuizt/infoappmex/app/views/shelters/index.html.erb -->
+
+<div class="row">
+  <% @shelters.each do |shelter| %>
+    <div class="col-md-4">
+      <%= link_to shelter_path(shelter) do %>
+        <div class="card m-2">
+          <div class="card-body">
+            <h5 class="card-title"><strong><%= shelter.name %></strong></h5>
+            <p class="card-text"><%= shelter.description %></p>
+            <p class="card-text"><strong>En: </strong><%= shelter.address %></p>
+            <p class="card-text"><strong>Capacidad: </strong><%= shelter.max_capacity %></p>
+            <!-- Add more card content here if needed -->
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>

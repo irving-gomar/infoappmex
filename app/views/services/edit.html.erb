@@ -1,0 +1,12 @@
+<div class="container">
+  <h2>Edit Service</h2>
+
+  <%= simple_form_for(@service) do |f| %>
+    <%= f.input :activity, :collection => %w["Asistencia Medica", "Asistencia Alimentaria", "Proteccion y Ayuda Legal", "Albergue"] %>
+    <%= f.input :dates %>
+    <%= f.input :description %>
+    <%= f.button :submit %>
+  <% end %>
+
+  <%= link_to 'Back', services_path, class: 'btn btn-secondary mt-3'%>
+</div>

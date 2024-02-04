@@ -7,7 +7,7 @@ class CreateShelters < ActiveRecord::Migration[7.0]
       t.float :longitude
       t.float :latitude
       t.integer :max_capacity
-      t.references :user, null: false, foreign_key: true
+      t.references :ong, null: false, foreign_key: true
 
       t.timestamps
     end
