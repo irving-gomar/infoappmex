@@ -1,18 +1,27 @@
 <div>
   <h2 class="card-title"><%= @shelter.name %></h2>
   <p class="card-text">
-    <strong>Description:</strong> <%= @shelter.description %><br>
-    <strong>Address:</strong> <%= @shelter.address %><br>
-    <strong>Max capacity:</strong> <%= @shelter.max_capacity %>
+    <strong>Descripción:</strong> <%= @shelter.description %><br>
+    <strong>Dirección:</strong> <%= @shelter.address %><br>
+    <strong>Capacidad:</strong> <%= @shelter.max_capacity %>
   </p>
   <%= link_to edit_shelter_path(@shelter), class: 'btn btn-primary mr-2' do %>
-    Edit
+    Editar refugio
   <% end %>
   <!-- Delete link -->
   <%= link_to shelter_path(@shelter), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: 'btn btn-danger' do %>
-    Delete
+    Borrar refugio
   <% end %>
   <%= link_to ong_path(@shelter.ong), class: 'btn btn-info' do %>
-    Back
+    Atras
   <% end %>
+    <!-- Add code here to show shelter's beds with availability status -->
+  </div>
+<% @shelter.beds.each_with_index do |bed, id| %>
+  <p>
+    <strong>Cama <%= id+1 %>:</strong>
+    <%= bed.status %> <%= button_to 'Reservar', shelter_bookings_path(@shelter, bed_id: bed.id) , class: 'btn btn-info btn-sm' if bed.status == "disponible"%>
+  </p>
+<% end %>
+  
 </div>

@@ -11,7 +11,8 @@ Rails.application.routes.draw do
 
   
   resources :shelters, only: [:index, :show, :edit, :update, :destroy] do
-    resources :beds, only: [:new, :create]
+    # resources :beds, only: [:new, :create] 
+    resources :bookings, only: [:new, :create]
   end
 
   resources :beds, only: [:show, :edit, :update, :destroy]
