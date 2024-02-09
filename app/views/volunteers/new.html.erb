@@ -1,9 +1,0 @@
-<%= simple_form_for [@ong, @service] do |f|%>
-  <%= f.input :name, :collection => ["Asistencia Medica", "Asistencia Alimentaria", "Proteccion y Ayuda Legal", "Albergue"] %>
-  <%= f.input :date_from, html5: true %>
-  <%= f.input :date_to, html5: true %>
-  <%= f.input :description %>
-  <%= f.button :submit %>
-<% end %>
-
-<%#= link_to "Back", services_path, class: 'btn btn-info' %>
