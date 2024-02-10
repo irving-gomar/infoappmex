@@ -1,15 +1,14 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: "pages#home"
+  get "/profile", to: "pages#profile"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
-  # ONG
   resources :ongs, only: [:index, :show, :new, :create, :edit, :update, :destroy] do
     resources :shelters, only: [:new, :create]
+    resources :services, only: [:new, :create]
   end
 
-
-  
   resources :shelters, only: [:index, :show, :edit, :update, :destroy] do
     # resources :beds, only: [:new, :create] 
     resources :bookings, only: [:new, :create]
@@ -21,10 +20,14 @@ Rails.application.routes.draw do
   get 'my_ongs', to: 'ongs#my_ongs', as: :my_ongs
 
 
-  resources :beds, only: [:show, :edit, :destroy]
 
   resources :bookings, only: [:index, :edit, :destroy]
   
+  resources :beds, only: [:show, :edit, :update, :destroy]
+
+  resources :services, except: [:new, :create]
+
+  resources :volunteerings, only: [:create]
   # Defines the root path route ("/")
   # root "articles#index"
 end
