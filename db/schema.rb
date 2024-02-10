@@ -118,10 +118,10 @@ ActiveRecord::Schema[7.0].define(version: 2024_02_10_052247) do
     t.float "longitude"
     t.float "latitude"
     t.integer "max_capacity"
-    t.bigint "user_id", null: false
+    t.bigint "ong_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_shelters_on_user_id"
+    t.index ["ong_id"], name: "index_shelters_on_ong_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -132,7 +132,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_02_10_052247) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "role"
+    t.string "role"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -156,7 +156,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_02_10_052247) do
   add_foreign_key "ongs", "users"
   add_foreign_key "posts", "ongs"
   add_foreign_key "services", "ongs"
-  add_foreign_key "shelters", "users"
+  add_foreign_key "shelters", "ongs"
   add_foreign_key "volunteerings", "services"
   add_foreign_key "volunteerings", "users"
 end
