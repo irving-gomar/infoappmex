@@ -9,17 +9,48 @@
   align-items: center;
 }
 
-// .container {
-//   background: white;
-// }
-
-.card{
+.card {
   overflow: hidden;
   height: 180px;
-  background: white;
+  background: #EBEBEB;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
-  background-color: #B7E1E4;
+  color: black;
+  border-radius: 20px;
   border-style: none;
+}
+
+.card:hover {
+  border-width: 3px;
+  border-color: #8800e6;
+  border-top-style: solid;
+}
+
+.h2 {
+  background-color: #5a3fef;
+  color: white;
+  border-radius: 20px;
+  height: 35px;
+}
+
+.h2-ong {
+  background-color: #833af9;
+  color: white;
+  border-radius: 20px;
+  height: 35px;
+}
+
+.h2-vol {
+  background-color: #8858dc;
+  color: white;
+  border-radius: 20px;
+  height: 35px;
+}
+
+.h2-us {
+  background-color: #8484f2;
+  color: white;
+  border-radius: 20px;
+  height: 35px;
 }
