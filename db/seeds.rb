@@ -1,4 +1,6 @@
 require "open-uri"
+require Rails.root.join('app/models/service')
+require Rails.root.join('app/models/ong')
 
 
 ong_user1  = User.create!(email: "ong1@infoappmex.org", password: 123456, role: "ONG")
@@ -14,3 +16,27 @@ ong_sf.photo.attach(io: file, filename: "sf.png", content_type: "image/png")
 ong_sf.save!
 
 User.create(email: "contacto@infoappmex.org", password: 123456, role: "ONG")
+
+Service.create(
+  name: 'Asistencia para 1',
+  description: 'Asistencia para...',
+  date_from: Date.today,
+  date_to: Date.today + 7.days,
+  ong: ong_acnur
+).save!
+
+Service.create(
+  name: 'Asistencia de 2',
+  description: 'Asistencia de...',
+  date_from: Date.today + 10.days,
+  date_to: Date.today + 20.days,
+  ong: ong_acnur
+).save!
+
+Service.create(
+  name: 'Asistencia de 3',
+  description: 'Asistencia de...',
+  date_from: Date.today + 10.days,
+  date_to: Date.today + 20.days,
+  ong: ong_acnur
+).save!
