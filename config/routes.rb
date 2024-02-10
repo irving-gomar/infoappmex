@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   post 'restaurar', to: 'bookings#restore', as: :restaurar
 
   get 'my_bookings', to: 'bookings#my_bookings', as: :my_bookings
+  get 'my_ongs', to: 'ongs#my_ongs', as: :my_ongs
 
 
 

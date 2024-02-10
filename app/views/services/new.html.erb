@@ -1,9 +1,12 @@
-<%= simple_form_for [@ong, @service] do |f|%>
+<div class="container main-box-form mt-6 shadow justify-content-center">
+  <%= simple_form_for [@ong, @service] do |f|%>
   <%= f.input :name, :collection => ["Asistencia Medica", "Asistencia Alimentaria", "Proteccion y Ayuda Legal", "Albergue"] %>
   <%= f.input :date_from, html5: true %>
   <%= f.input :date_to, html5: true %>
   <%= f.input :description %>
-  <%= f.button :submit %>
-<% end %>
+  <%= f.button :submit, class: "btn-flat" %>
+  <% end %>
+</div>
+
 
 <%#= link_to "Back", services_path, class: 'btn btn-info' %>
