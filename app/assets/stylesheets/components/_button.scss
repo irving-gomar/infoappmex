@@ -17,7 +17,7 @@
   padding: 8px 24px;
   border-radius: 4px;
   background: #670BFF;
-  transition: background 0.3s ease;
+  transition: background-color 0.3s ease;
 }
 
 .btn-flat:hover {
@@ -31,11 +31,58 @@
   border-radius: 4px;
   font-weight: bold;
   background: linear-gradient(#167FFB, #0F60C4);
-  transition: background 0.3s ease;
+  transition: background-color 0.3s ease;
   border: 1px solid #0F60C4;
 }
 
 .btn-gradient:hover {
   background: linear-gradient(#147EFF, #0F67DA);
   color: white;
+}
+
+.btn-primary-ia {
+  position: relative;
+  z-index: 100;
+  top: 100px;
+  background-color: #2C12C6;
+  color: white;
+  border-style: none;
+  // border-radius: 40px;
+  transition: background-color 1.0s ease;
+  text-decoration: none;
+  padding: 12px 20px;
+}
+
+.btn-primary-ia:hover {
+  background-color: #aa32ff;
+}
+
+.btn-group {
+  top: 140px;
+}
+
+.btn-left {
+  border-top-left-radius: 40px;
+  border-bottom-left-radius: 40px;
+}
+
+.btn-right {
+  border-top-right-radius: 40px;
+  border-bottom-right-radius: 40px;
+}
+
+.btn-primary {
+  background-color: #2C12C6;
+  color: white;
+  border-style: none;
+  border-radius: 20px;
+  transition: background-color 1.0s ease;
+  text-decoration: none;
+  padding: 12px 20px;
+  transition: border-radius 1.0s ease;
+}
+
+.btn-primary:hover {
+  background-color: #8800E6;
+  border-radius: 10px;
 }

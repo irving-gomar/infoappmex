@@ -4,28 +4,28 @@
       <div class="img">
         <% case service.activity %>
         <% when "Asistencia Medica" %>
-          <%= image_tag("app/assets/images/medicina.png", style: "object-fit: cover; aspect-ratio: 1/1; width: 300px; height:300px")%>
+          <%= image_tag("app/assets/images/med.png", style: "object-fit: cover; aspect-ratio: 1/1; width: 300px; height:300px")%>
         <% end %>
 
     <div class="card" style="width=300px; height:100%;">
       <div class="img">
         <% case service.activity %>
         <% when "Asistencia Alimentaria" %>
-          <%= image_tag("app/assets/images/alimentos.png", style: "object-fit: cover; aspect-ratio: 1/1; width: 300px; height:300px")%>
+          <%= image_tag("app/assets/images/food.png", style: "object-fit: cover; aspect-ratio: 1/1; width: 300px; height:300px")%>
         <% end %>
 
     <div class="card" style="width=300px; height:100%;">
       <div class="img">
         <% case service.activity %>
         <% when "Proteccion y Ayuda Legal" %>
-          <%= image_tag("app/assets/images/legal.png", style: "object-fit: cover; aspect-ratio: 1/1; width: 300px; height:300px")%>
+          <%= image_tag("app/assets/images/protection.png", style: "object-fit: cover; aspect-ratio: 1/1; width: 300px; height:300px")%>
         <% end %>
 
     <div class="card" style="width=300px; height:100%;">
       <div class="img">
         <% case service.activity %>
         <% when "Albergue" %>
-          <%= image_tag("app/assets/images/albergue.png", style: "object-fit: cover; aspect-ratio: 1/1; width: 300px; height:300px")%>
+          <%= image_tag("app/assets/images/shelter.png", style: "object-fit: cover; aspect-ratio: 1/1; width: 300px; height:300px")%>
         <% end %>
 
       </div>
@@ -46,4 +46,4 @@
     </div>
   <% end %>
 
-<%= link_to 'Pulsa aqui para ofrecer un servicio de apoyo a migrantes', new_service_path, class: 'btn btn-primary' %>
+<%= link_to 'Pulsa aqui para ofrecer un servicio de apoyo a migrantes', new_ong_service_path(current_user), class: 'btn btn-primary' %>
