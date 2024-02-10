@@ -15,7 +15,14 @@ Rails.application.routes.draw do
     resources :bookings, only: [:new, :create]
   end
 
-  resources :beds, only: [:show, :edit, :update, :destroy]
+  post 'restaurar', to: 'bookings#restore', as: :restaurar
+
+  get 'my_bookings', to: 'bookings#my_bookings', as: :my_bookings
+
+
+  resources :beds, only: [:show, :edit, :destroy]
+
+  resources :bookings, only: [:index, :edit, :destroy]
   
   # Defines the root path route ("/")
   # root "articles#index"
