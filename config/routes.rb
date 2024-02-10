@@ -9,9 +9,18 @@ Rails.application.routes.draw do
   end
 
   resources :shelters, only: [:index, :show, :edit, :update, :destroy] do
-    resources :beds, only: [:new, :create]
+    # resources :beds, only: [:new, :create] 
+    resources :bookings, only: [:new, :create]
   end
 
+  post 'restaurar', to: 'bookings#restore', as: :restaurar
+
+  get 'my_bookings', to: 'bookings#my_bookings', as: :my_bookings
+
+
+
+  resources :bookings, only: [:index, :edit, :destroy]
+  
   resources :beds, only: [:show, :edit, :update, :destroy]
 
   resources :services, except: [:new, :create]

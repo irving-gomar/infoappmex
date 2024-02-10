@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_02_03_225135) do
+ActiveRecord::Schema[7.0].define(version: 2024_02_10_052247) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -53,10 +53,10 @@ ActiveRecord::Schema[7.0].define(version: 2024_02_03_225135) do
   create_table "bookings", force: :cascade do |t|
     t.date "date"
     t.bigint "user_id", null: false
-    t.bigint "shelter_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["shelter_id"], name: "index_bookings_on_shelter_id"
+    t.bigint "bed_id"
+    t.index ["bed_id"], name: "index_bookings_on_bed_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
 
@@ -149,7 +149,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_02_03_225135) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "beds", "shelters"
-  add_foreign_key "bookings", "shelters"
+  add_foreign_key "bookings", "beds"
   add_foreign_key "bookings", "users"
   add_foreign_key "messages", "chats"
   add_foreign_key "messages", "users"

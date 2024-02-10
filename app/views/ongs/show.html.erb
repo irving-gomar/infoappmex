@@ -13,13 +13,17 @@
             <strong>Address:</strong> <%= @ong.address %><br>
           </p>
 
-          <%= link_to edit_ong_path(@ong), class: 'btn btn-primary mr-2' do %>
-            Edit
-          <% end %>
+          <% if current_user.id == @ong.user_id %>
 
-          <!-- Delete link -->
-          <%= link_to ong_path, data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: 'btn btn-danger' do %>
-            Delete
+            <%= link_to edit_ong_path(@ong), class: 'btn btn-primary mr-2' do %>
+              Edit
+            <% end %>
+
+            <!-- Delete link -->
+            <%= link_to ong_path, data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: 'btn btn-danger' do %>
+              Delete
+            <% end %>
+
           <% end %>
           
           <%= link_to ongs_path, class: 'btn btn-info' do %>
@@ -50,10 +54,12 @@
           <% end %>          
         <% end %>
         
-        <div class="col-md-4">
-          <%# create a first shelter %>
-          <%= link_to 'Crear Refugio', new_ong_shelter_path(@ong), class: 'btn btn-primary' %>
-        </div>
+        <% if current_user.id == @ong.user_id %>
+          <div class="col-md-4">
+            <%# create a first shelter %>
+            <%= link_to 'Crear Refugio', new_ong_shelter_path(@ong), class: 'btn btn-primary' %>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>
