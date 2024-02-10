@@ -8,11 +8,24 @@
   }
 
 </style>
+
 <div class="container text-center mt-4">
   <div class="p-3">
     <h1>ONGs</h1>
     <hr class="solid">
   </div>
+
+  <% if current_user.role == "ONG" %>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="mb-4">
+          <%= link_to new_ong_path, class: "btn btn-info" do %>
+            Registrar ONG
+          <% end %>
+        </div>
+      </div>
+    </div>
+  <% end %>
 
   <div class="container">
     <div class="row">
