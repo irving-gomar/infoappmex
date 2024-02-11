@@ -1,11 +1,17 @@
+<script>
+  AOS.init();
+</script>
 <div style="width: 100%;">
-<div id="carouselExampleInterval" class="carousel slide carousel-fade mt-0 position-relative" data-bs-ride="carousel">
-   <h1 class="h1-carousel position-absolute"><strong>Conectamos servicios y ayuda a migrantes</strong></h1>
-    <div class="btn-group me-2 position-absolute" role="group" aria-label="Basic example">
-    <a href="/migrante" class="btn-primary-ia m-2 btn-left">Soy Migrante</a>
-     <a href="/ong"class="btn-primary-ia m-2 btn-center">Soy ONG</a>
-     <a href="/voluntario" class="btn-primary-ia m-2 btn-right">Soy Voluntario</a>
-</div>
+    <div id="carouselExampleInterval" class="carousel slide carousel-fade mt-0 position-relative" data-bs-ride="carousel">
+      <div class="container w-50">
+        <h1 class="h1-carousel position-absolute"><strong>Conectamos servicios y ayuda a migrantes</strong></h1>
+        <div class="btn-group me-2 position-absolute" role="group" aria-label="Basic example">
+          <a href="/migrante" class="btn-primary-ia m-2 btn-left">Soy Migrante</a>
+          <a href="/ong"class="btn-primary-ia m-2 btn-center">Soy ONG</a>
+          <a href="/voluntario" class="btn-primary-ia m-2 btn-right">Soy Voluntario</a>
+        </div>
+      </div>
+    </div>
   <div class="carousel-inner">
     <div class="carousel-item active" data-bs-interval="3000" style="height: 80vh;">
       <%= image_tag "alimentos.png", class:"img d-block w-100" %>
@@ -13,8 +19,14 @@
     <div class="carousel-item" data-bs-interval="3000" style="height: 80vh;">
       <%= image_tag "albergue.png", class:"img d-block w-100" %>
     </div>
+    <div class="carousel-item active" data-bs-interval="3000" style="height: 80vh;">
+      <%= image_tag "protection.png", class:"img d-block w-100" %>
+    </div>
     <div class="carousel-item" data-bs-interval="3000" style="height: 80vh;">
       <%= image_tag "medicina.png", class:"img d-block w-100" %>
+    </div>
+    <div class="carousel-item active" data-bs-interval="3000" style="height: 80vh;">
+      <%= image_tag "border.png", class:"img d-block w-100" %>
     </div>
     <div class="carousel-item" data-bs-interval="3000" style="height: 80vh;">
       <%= image_tag "legal.png", class:"img d-block w-100" %>
@@ -28,92 +40,108 @@
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Next</span>
   </button>
-</div>
-</div>
-<div id="migrante">
- <h2 class="h2 mt-4 ms-5 mb-4">Soy Migrante</h2>
-  <div class="row">
-    <div class="ms-5 col-sm-3 mb-3 mb-sm-0">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">Quiero refugio</h5>
-          <p class="card-text">Encuentra un lugar cerca de ti para dormir.</p>
-          <a href="#" class="btn btn-primary">Refugio</a>
+ <div class="container mx-auto">
+  <div id="migrante">
+    <h2 class="h2 mt-4 ms-5 mb-4 text-center">Soy Migrante</h2>
+      <div class="row d-flex justify-content-between">
+        <div class="ms-5 col-sm-3 mb-3 mb-sm-5">
+          <div class="card" data-aos="fade-left" data-aos-duration="3000" >
+            <div class="card-body">
+              <h5 class="card-title">Quiero refugio</h5>
+              <p class="card-text">Encuentra un lugar cerca de ti para dormir.</p>
+              <a href="#" class="btn btn-primary btn-sm mb-2">Refugio</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="card" data-aos="fade-up" data-aos-duration="3000">
+            <div class="card-body">
+              <h5 class="card-title">Comunícate</h5>
+              <p class="card-text">Ponte en contacto con mas personas.</p>
+              <a href="#" class="btn btn-primary btn-sm mb-2">Chat</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="card" data-aos="fade-right" data-aos-duration="3000">
+            <div class="card-body">
+              <h5 class="card-title">Entérate</h5>
+              <p class="card-text">Mantente informado de lo que pasa cerca de ti.</p>
+              <a href="#" class="btn btn-primary btn-sm mb-2">Anuncios</a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-    <div class="col-sm-3">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">Comunícate</h5>
-          <p class="card-text">Ponte en contacto con personas en la misma situación.</p>
-          <a href="#" class="btn btn-primary">Chat</a>
+    <div id="ong">
+    <h2 class="h2-ong mt-5 ms-5 mb-4 text-center">Soy ONG</h2>
+      <div class="row d-flex justify-content-between">
+        <div class="ms-5 col-sm-3 mb-3 mb-sm-5">
+          <div class="card" data-aos="fade-left" data-aos-duration="3000">
+            <div class="card-body">
+              <h5 class="card-title">Ofrece refugio</h5>
+              <p class="card-text">Brinda seguridad a personas migrantes.</p>
+              <a href="#" class="btn btn-primary btn-sm mb-2">Nuevo Refugio</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="card" data-aos="fade-up" data-aos-duration="3000">
+            <div class="card-body">
+              <h5 class="card-title">Anuncia</h5>
+              <p class="card-text">Publica cualquier información que sea útil.</p>
+              <a href="#" class="btn btn-primary btn-sm mb-2 ">Nuevo Anuncio</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="card" data-aos="fade-right" data-aos-duration="3000">
+            <div class="card-body">
+              <h5 class="card-title">Busco voluntarios</h5>
+              <p class="card-text">¿Quieres reunir a gente que ayude? Aquí puedes hacerlo.</p>
+              <a href="#" class="btn btn-primary btn-sm mb-2">Nuevo Servicio</a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-    <div class="col-sm-3">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">Entérate</h5>
-          <p class="card-text">Mantente informado de lo que está pasando cerca de ti.</p>
-          <a href="#" class="btn btn-primary">Anuncios</a>
+   <div id="voluntario">
+    <h2 class="h2-vol mt-5 ms-5 mb-4 text-center">Soy Voluntario</h2>
+      <div class="row d-flex justify-content-center">
+        <div class="ms-5 col-sm-3 mb-3 mb-sm-5">
+          <div class="card" data-aos="zoom-in" data-aos-duration="3000">
+            <div class="card-body">
+              <h5 class="card-title">Participa con ONG's</h5>
+              <p class="card-text">¿Quieres ayudar? Forma parte para crear un cambio.</p>
+              <a href="#" class="btn btn-primary btn-sm mb-2">Únete</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="card" data-aos="zoom-in" data-aos-duration="3000">
+            <div class="card-body">
+              <h5 class="card-title">Conecta</h5>
+              <p class="card-text">Únete a la comunidad migrante para ayudar.</p>
+              <a href="#" class="btn btn-primary btn-sm mb-2">Chat</a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
-<div id="ong">
- <h2 class="h2 mt-5 ms-5 mb-4">Soy ONG</h2>
-  <div class="row">
-    <div class="ms-5 col-sm-3 mb-3 mb-sm-0">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">Ofrece refugio</h5>
-          <p class="card-text">Brinda seguridad para descansar a personas migrantes.</p>
-          <a href="#" class="btn btn-primary">Nuevo Refugio</a>
-        </div>
-      </div>
+<div centered-container>
+<h2 class="h2-us mt-5 ms-5 mb-4 text-center">Sobre Nosotros</h2>
+ <div class="card mb-3" style="max-width: 540px;">
+  <div class="row g-0 d-flex">
+    <div class="col-md-4">
+      <%= image_tag "volunteer.png", class:"img-fluid rounded-start" %>
     </div>
-    <div class="col-sm-3">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">Anuncia</h5>
-          <p class="card-text">Publica noticias, ayuda o cualquier información que sea útil.</p>
-          <a href="#" class="btn btn-primary">Nuevo Anuncio</a>
-        </div>
-      </div>
-    </div>
-    <div class="col-sm-3">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">Busco voluntarios</h5>
-          <p class="card-text">¿Quieres reunir a gente que ayude? Aquí puedes hacerlo.</p>
-          <a href="#" class="btn btn-primary">Nuevo Servicio</a>
-        </div>
+    <div class="col-8">
+      <div class="card-body" data-aos="zoom-in" data-aos-duration="3000">
+        <h5 class="card-title">InfoAppMex es... </h5>
+        <p class="card-text">Una iniciativa 100% mexicana.  Somos tres emprendedores recién llegados al sector tecnológico digital.  Tenemos un corazón empático con causas sociales.  Entre nuestro conjunto de habilidades, tenemos extenso conocimiento sobre comunicaciones y diseño creativo, ciencias ambientales, así como el manejo de organizaciones benéficas y sin fines de lucro y proyectos de asistencia humanitaria. .</p>Ayudando desde el año 2020.</small></p>
       </div>
     </div>
   </div>
-</div>
-<div id="voluntario">
- <h2 class="h2 mt-5 ms-5 mb-4">Soy Voluntario</h2>
-  <div class="row">
-    <div class="ms-5 col-sm-3 mb-3 mb-sm-0">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">Participa con ONG's</h5>
-          <p class="card-text">¿Quieres ayudar? Forma parte para crear un cambio.</p>
-          <a href="#" class="btn btn-primary">Únete</a>
-        </div>
-      </div>
-    </div>
-    <div class="col-sm-3">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">Conecta</h5>
-          <p class="card-text">Únete a la comunidad migrante para ayudar.</p>
-          <a href="#" class="btn btn-primary">Chat</a>
-        </div>
-      </div>
-    </div>
-  </div>
+ </div>
 </div>
