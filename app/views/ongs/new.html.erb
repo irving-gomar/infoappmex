@@ -1,12 +1,15 @@
-<%= simple_form_for @ong do |f| %>
-  <%= f.input :name %>
-  <%= f.input :photo, as: :file, label: "Logo"%>
-  <%= f.input :description, as: :text %>
-  <%= f.input :address %>
-  <%= f.input :website %>
-  <%= f.button :submit %>
-<% end %>
+<div class="container main-box-form mt-6 shadow justify-content-center">
+  
+  <%= simple_form_for @ong do |f| %>
+    <%= f.input :name %>
+    <%= f.input :photo, as: :file, label: "Logo"%>
+    <%= f.input :description, as: :text %>
+    <%= f.input :address %>
+    <%= f.input :website %>
+    <%= f.button :submit, class: "btn-flat" %>
+  <% end %>
 
-<%= link_to ongs_path, class: 'btn btn-info' do %>
-    Back
-<% end %>
+  <%= link_to ongs_path, class: 'btn btn-info mt-2' do %>
+      Back
+  <% end %>
+</div>

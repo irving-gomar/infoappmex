@@ -5,6 +5,20 @@ class OngsController < ApplicationController
 
   def show
     @ong = Ong.find(params[:id])
+
+    @ong_marker = [
+      {
+        lat: @ong.latitude,
+        lng: @ong.longitude
+      }
+    ]
+
+    @shelter_markers = @ong.shelters.geocoded.map do |shelter|
+      {
+        lat: shelter.latitude,
+        lng: shelter.longitude
+      }
+    end
   end
 
   def new
@@ -35,6 +49,10 @@ class OngsController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def my_ongs 
+    @ongs = current_user.ongs
   end
 
   private 
