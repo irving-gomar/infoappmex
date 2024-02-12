@@ -11,11 +11,12 @@
 
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=ABeeZee&family=Alata&family=Roboto+Mono:wght@300&family=Source+Code+Pro&display=swap" rel="stylesheet">
 
     <style>
-        body {
-            background-color: #EBEBEB;
-        }
+
     </style>
 
     <link href="https://api.mapbox.com/mapbox-gl-js/v2.11.0/mapbox-gl.css" rel="stylesheet">
@@ -23,22 +24,27 @@
   </head>
 
   <body><%= render "shared/navbar" %>
-<%= render "shared/flashes" %>
+  <%= render "shared/flashes" %>
 
     <%= yield %>
     <div class="footer">
-  <div class="footer-links">
+  <div class="footer-links mt-3 mb-3">
     <a href="#"><i class="fab fa-github"></i></a>
     <a href="#"><i class="fab fa-instagram"></i></a>
     <a href="#"><i class="fab fa-facebook"></i></a>
     <a href="#"><i class="fab fa-twitter"></i></a>
-    <a href="#"><i class="fab fa-linkedin"></i></a>
   </div>
-  <div class="footer-copyright">
-    This footer is made with <i class=""></i>
-  </div>
+    <div class="footer-menu d-flex mx-auto">
+      <ul>
+      <li><%= link_to 'Inicio', ongs_path %></li>
+      <li><%= link_to 'Comunidad', ongs_path %></li>
+      <li><%= link_to 'Servicios', ongs_path %></li>
+      <li><%= link_to 'Refugio', ongs_path %></li>
+      </ul>
+    </div>
+    <div class="logo-footer">
+      <i><%= image_tag "logofooter.png" %></i>
+   </div>
 </div>
   </body>
 </html>
-
-
