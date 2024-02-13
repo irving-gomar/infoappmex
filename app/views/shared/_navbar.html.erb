@@ -37,13 +37,11 @@
             </div>
           </li>
         <% else %>
-         <nav class="navbar bg-body-tertiary container-fluid justify-content-start">
-            <%= link_to new_user_registration_path, class: "btn btn-outline-success me-2" do %>
-              Registrate
-            <% end %>
-            <%= link_to new_user_session_path, class: "btn btn-outline-secondary", style: "z-index: 99999" do %>
-              Inicia Sesión
-            <% end %>
+         <nav class="navbar bg-body-tertiary">
+          <form class="container-fluid justify-content-start">
+            <button class="btn btn-outline-success me-2" type="button">Regístrate</button>
+             <%= link_to "Inicia Sesión", new_user_session_path, class: "nav-link btn btn-outline-secondary" %>
+          </form>
          </nav>
         <% end %>
       </ul>
