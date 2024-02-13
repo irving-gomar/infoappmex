@@ -6,13 +6,6 @@ class OngsController < ApplicationController
   def show
     @ong = Ong.find(params[:id])
 
-    @ong_marker = [
-      {
-        lat: @ong.latitude,
-        lng: @ong.longitude
-      }
-    ]
-
     @shelter_markers = @ong.shelters.geocoded.map do |shelter|
       {
         lat: shelter.latitude,
