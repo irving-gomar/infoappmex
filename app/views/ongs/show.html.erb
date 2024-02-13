@@ -7,29 +7,31 @@
         </div>
       </div>
       <div class="col-md-8">
-        <div class="card-body p-3 two-columns">
+        <div class="card-body p-4 two-columns">
           <div>
-            <p class="card-text">
+            <p class="card-text mb-3">
               <strong>Descripción:</strong> <%= @ong.description %><br>
               <strong>Dirección:</strong> <%= @ong.address %><br>
             </p>
+            <div class="mt-2">
 
             <% if current_user.id == @ong.user_id %>
 
-              <%= link_to edit_ong_path(@ong), class: 'btn-flat p-3 text-decoration-none m-1' do %>
+              <%= link_to edit_ong_path(@ong), class: 'btn btn-success bg-white p-3 text-decoration-none m-1' do %>
                 Editar
               <% end %>
 
               <!-- Delete link -->
-              <%= link_to ong_path, data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: 'btn-flat text-decoration-none p-3 m-1' do %>
+              <%= link_to ong_path, data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: 'btn btn-success bg-white text-decoration-none p-3 m-1' do %>
                 Borrar
               <% end %>
 
-              <%= link_to new_ong_service_path(@ong), class: 'btn-flat p-3 text-decoration-none m-1' do %>
+              <%= link_to new_ong_service_path(@ong), class: 'btn btn-success p-3 text-decoration-none m-1' do %>
                 Nuevo Servicio
               <% end %>
 
             <% end %>
+            </div>
           
           </div>
           <div class="container2-2">
@@ -59,17 +61,15 @@
       </div>
 
       <div class="container p-3 two-columns">
-        <div>
-          <div class="card shadow-sm m-2 rounded">
+        <div class="d-flex align-content-start justify-content-center flex-column">
           <%= link_to new_ong_shelter_path(@ong), class: 'btn-flat p-3 text-decoration-none' do %>
             Nuevo Refugio
           <% end %>
-          </div>
 
           <% if @ong.shelters.empty? == false %>
             <% @ong.shelters.each do |shelter| %>
               <%= link_to shelter_path(shelter), class: "text-decoration-none" do %>
-                <div class="card shadow-sm m-2 rounded">
+                <div class="card-left shadow-sm m-2 rounded">
                   <div class="card-body">
                     <h5 class="card-title"><%= shelter.name %></h5>
                     <p class="card-text">

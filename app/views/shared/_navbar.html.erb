@@ -16,10 +16,10 @@
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
           <li class="nav-item active">
-            <%= link_to "ONG", "#", class: "nav-link" %>
+            <%= link_to "ONG", ongs_path, class: "nav-link" %>
           </li>
           <li class="nav-item active">
-            <%= link_to "Refugio", "#",  class: "nav-link" %>
+            <%= link_to "Refugio", shelters_path,  class: "nav-link" %>
           </li>
           <li class="nav-item active">
             <%= link_to "Comunidad", "#", class: "nav-link" %>
@@ -37,11 +37,13 @@
             </div>
           </li>
         <% else %>
-         <nav class="navbar bg-body-tertiary">
-          <form class="container-fluid justify-content-start">
-            <button class="btn btn-outline-success me-2" type="button">Regístrate</button>
-            <button class="btn btn-outline-secondary" type="button">Inicia Sesión</button>
-          </form>
+         <nav class="navbar bg-body-tertiary container-fluid justify-content-start">
+            <%= link_to new_user_registration_path, class: "btn btn-outline-success me-2" do %>
+              Registrate
+            <% end %>
+            <%= link_to new_user_session_path, class: "btn btn-outline-secondary", style: "z-index: 99999" do %>
+              Inicia Sesión
+            <% end %>
          </nav>
         <% end %>
       </ul>
