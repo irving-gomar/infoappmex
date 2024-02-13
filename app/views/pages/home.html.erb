@@ -53,7 +53,7 @@
               <div class="card-body">
                 <h5 class="card-title">Quiero refugio</h5>
                 <p class="card-text">Encuentra un lugar cerca de ti para dormir.</p>
-                <a href="#" class="btn btn-primary btn-sm mb-2">Refugio</a>
+                <%= link_to "Refugio", shelters_path, class: "btn btn-primary btn-sm mb-2" %>
               </div>
             </div>
           </div>
@@ -71,7 +71,7 @@
               <div class="card-body">
                 <h5 class="card-title">Entérate</h5>
                 <p class="card-text">Mantente informado de lo que pasa cerca de ti.</p>
-                <a href="#" class="btn btn-primary btn-sm mb-2">Anuncios</a>
+                <%= link_to "Anuncios", anuncios_path, class: "btn btn-primary btn-sm mb-2" %>
               </div>
             </div>
           </div>
@@ -85,7 +85,7 @@
               <div class="card-body">
                 <h5 class="card-title">Ofrece refugio</h5>
                 <p class="card-text">Brinda seguridad a personas migrantes.</p>
-                <a href="#" class="btn btn-primary btn-sm mb-2">Nuevo Refugio</a>
+                <%= link_to "Nuevo Refugio", ongs_path, class: "btn btn-primary btn-sm mb-2" %>
               </div>
             </div>
           </div>
@@ -132,7 +132,6 @@
             </div>
           </div>
       </div>
-      < class="centered-container justify-content-center">
         <h2 class="h2-us mt-5 ms-5 mb-4 text-center">Sobre Nosotros</h2>
         <div class="last-card mt-4" style="max-width: 1000px;" data-aos="zoom-in" data-aos-duration="3000">
           <div class="row g-0 d-flex">
