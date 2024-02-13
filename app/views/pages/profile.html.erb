@@ -1,0 +1,9 @@
+<%= current_user.email %>
+<%= current_user.role %>
+<ul>
+  <% current_user.services.each do |service| %>
+    <li>
+      <%= service.name %>
+    </li>
+  <% end %>
+</ul>

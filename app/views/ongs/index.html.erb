@@ -14,6 +14,18 @@
     <hr class="solid">
   </div>
 
+  <% if current_user.role == "ONG" %>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="mb-4">
+          <%= link_to new_ong_path, class: "btn btn-info" do %>
+            Registrar ONG
+          <% end %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+
   <div class="container">
     <div class="row">
       <% @ongs.each do |ong| %>
@@ -29,17 +41,6 @@
           </div>
         </div>
       <% end %>
-    </div>
-  </div>
-
-  
-  <div class="row">
-    <div class="col-md-12">
-      <div class="mb-4">
-        <%= link_to new_ong_path, class: "btn btn-info" do %>
-          Registrar ONG
-        <% end %>
-      </div>
     </div>
   </div>
 </div>

@@ -18,24 +18,31 @@
           <li class="nav-item active">
             <%= link_to "ONG", "#", class: "nav-link" %>
           </li>
-          <li class="nav-item">
+          <li class="nav-item active">
             <%= link_to "Refugio", "#",  class: "nav-link" %>
           </li>
-          <li class="nav-item">
+          <li class="nav-item active">
             <%= link_to "Comunidad", "#", class: "nav-link" %>
           </li>
           <li class="nav-item dropdown">
           <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          
+          <% if current_user.photo.attached? %>
+             <%= image_tag current_user.photo, class: "avatar", alt: "dropdown menu" %>
+          <% else %>
+             <%= image_tag  "avatar.png", class: "avatar", alt: "dropdown menu" %>
+          <% end %>
           </a>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
             </div>
           </li>
         <% else %>
-          <li class="nav-item">
-            <%= link_to "Inicia sesión", new_user_session_path, class: "nav-link" %>
-          </li>
+         <nav class="navbar bg-body-tertiary">
+          <form class="container-fluid justify-content-start">
+            <button class="btn btn-outline-success me-2" type="button">Regístrate</button>
+            <button class="btn btn-outline-secondary" type="button">Inicia Sesión</button>
+          </form>
+         </nav>
         <% end %>
       </ul>
     </div>

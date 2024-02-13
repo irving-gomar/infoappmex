@@ -1,49 +1,41 @@
-<div class="container" style="">
-  <% @services.each do |service| %>
-    <div class="card" style="width=300px; height:100%;">
-      <div class="img">
-        <% case service.activity %>
-        <% when "Asistencia Medica" %>
-          <%= image_tag("app/assets/images/medicina.png", style: "object-fit: cover; aspect-ratio: 1/1; width: 300px; height:300px")%>
-        <% end %>
+<style>
+  .card {
+    transition: all 0.2s ease;
+  }
+  .card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
+  }
+</style>
 
-    <div class="card" style="width=300px; height:100%;">
-      <div class="img">
-        <% case service.activity %>
-        <% when "Asistencia Alimentaria" %>
-          <%= image_tag("app/assets/images/alimentos.png", style: "object-fit: cover; aspect-ratio: 1/1; width: 300px; height:300px")%>
-        <% end %>
+<div class="container text-center mt-4">
+  <div class="p-3">
+    <h1>Servicios de Apoyo a Migrantes</h1>
+    <hr class="solid">
+  </div>
 
-    <div class="card" style="width=300px; height:100%;">
-      <div class="img">
-        <% case service.activity %>
-        <% when "Proteccion y Ayuda Legal" %>
-          <%= image_tag("app/assets/images/legal.png", style: "object-fit: cover; aspect-ratio: 1/1; width: 300px; height:300px")%>
-        <% end %>
+  <div class="container">
+<div class="d-flex flex-wrap justify-content-between">
+    <% @services.each do |service| %>
+      <div class="card" style="width: 300px; height: 100%;">
+        <div class="img">
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">
+            <%= service.name %>
+            <%= Ong.find(service.ong_id).name %>
+          </h5>
+          <p><%= service.description %></p>
+          <% if service.date_from && service.date_to %>
+            <p>Fecha: <%= service.date_from.strftime('%d %B %Y') %> to <%= service.date_to.strftime('%d %B %Y') %></p>
+          <% else %>
+            <p>Fecha: No especificado</p>
+          <% end %>
 
-    <div class="card" style="width=300px; height:100%;">
-      <div class="img">
-        <% case service.activity %>
-        <% when "Albergue" %>
-          <%= image_tag("app/assets/images/albergue.png", style: "object-fit: cover; aspect-ratio: 1/1; width: 300px; height:300px")%>
-        <% end %>
-
+          <%= button_to "Participar", volunteerings_path(service_id: service.id), class: 'btn btn-success mt-3' %>
+        </div>
       </div>
-      <div class="card-body">
-        <h5 class="card-title">
-          <%= service.activity %>
-        </h5>
-
-        <h5 class="card-title">
-          <%= service.price %>
-        </h5>
-        <p class="card-text">
-          <%= truncate(service.description, length: 50) %>
-        </p>
-      <%= link_to "Editar", edit_service_path(service.id), class: 'btn btn-info' %>
-      <%= link_to "Borrar", service_path(service.id), data:{turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: 'btn btn-danger' %>
-      <%= link_to 'Reserva', new_service_booking_path(service.id), class: 'btn btn-primary' %>
-    </div>
-  <% end %>
-
-<%= link_to 'Pulsa aqui para ofrecer un servicio de apoyo a migrantes', new_service_path, class: 'btn btn-primary' %>
+    <% end %>
+</div>
+  </div>
+</div>

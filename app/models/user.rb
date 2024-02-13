@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   validates :role, presence: true, inclusion: { in: %w[ONG Voluntario Migrante] }
-
+  
   has_one_attached :photo
   has_many :messages
   has_many :volunteerings
