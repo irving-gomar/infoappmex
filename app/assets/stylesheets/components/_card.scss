@@ -14,12 +14,31 @@
   overflow: hidden;
   height: 180px;
   background: #EBEBEB;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  // box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
   color: black;
   border-radius: 20px;
   border-style: none;
+}
+
+.card-left {
+  overflow: hidden;
+  height: 180px;
+  background: #EBEBEB;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: left;
+  color: black;
+  border-radius: 20px;
+  border-style: none;
+  padding: 20px;
+}
+
+.card-left:hover {
+  border-width: 3px;
+  border-color: #8800e6;
+  border-top-style: solid;
 }
 
 .card:hover {
@@ -33,7 +52,6 @@
   height: 280px;
   background: #EBEBEB;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  // align-items: center;
   color: black;
   border-radius: 20px;
   border-style: none;
@@ -41,28 +59,28 @@
 }
 
 .h2 {
-  background-color: #3a0ca3;
+  background-color: #7000c5;
   color: white;
   border-radius: 20px;
   height: 39px;
 }
 
 .h2-ong {
-  background-color: #3f37c9;
+  background-color: #4f28d8;
   color: white;
   border-radius: 20px;
   height: 39px;
 }
 
 .h2-vol {
-  background-color: #4361ee;
+  background-color: #3f73ed;
   color: white;
   border-radius: 20px;
   height: 39px;
 }
 
 .h2-us {
-  background-color: #4895ef;
+  background-color: #4c90b4;
   color: white;
   border-radius: 20px;
   height: 39px;
@@ -105,5 +123,31 @@
 }
 
 .container-fluid {
-  background-color: #EBEBEB;
+  background-color: #e6e3e3;
+}
+
+.container-signup {
+  box-shadow: 5px 5px 8px 5px rgba(118, 14, 255, 0.442);
+  padding: 25px;
+  border-radius: 20px;
+  background-color: #e6e3e3;
+  width: 900px;
+  margin: 0;
+  border-width: 3px;
+  border-color:#4c90b4;
+  border-top-style: solid;
+  border-bottom-style: solid;
+}
+
+.container-login {
+  box-shadow: 5px 5px 8px 5px rgba(118, 14, 255, 0.442);
+  padding: 25px;
+  border-radius: 20px;
+  background-color: #e6e3e3;
+  width: 900px;
+  margin: 0;
+  border-width: 3px;
+  border-color:#4c90b4;
+  border-top-style: solid;
+  border-bottom-style: solid;
 }

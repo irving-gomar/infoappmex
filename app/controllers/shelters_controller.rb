@@ -7,6 +7,12 @@ class SheltersController < ApplicationController
 
   def show
     @shelter = Shelter.find(params[:id])
+
+    @shelter_marker = [
+      {
+        lat: @shelter.latitude,
+        lng: @shelter.longitude
+      }]
   end
 
   def new
