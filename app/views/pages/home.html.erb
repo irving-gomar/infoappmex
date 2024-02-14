@@ -22,11 +22,11 @@
     <div class="carousel-item active" data-bs-interval="3000" style="height: 80vh;">
       <%= image_tag "protection.png", class:"img d-block w-100" %>
     </div>
+    <%# <div class="carousel-item active" data-bs-interval="3000" style="height: 80vh;">
+      <%= image_tag "border.png", class:"img d-block w-100" %>
+    <%# </div> %>
     <div class="carousel-item" data-bs-interval="3000" style="height: 80vh;">
       <%= image_tag "medicina.png", class:"img d-block w-100" %>
-    </div>
-    <div class="carousel-item active" data-bs-interval="3000" style="height: 80vh;">
-      <%= image_tag "border.png", class:"img d-block w-100" %>
     </div>
     <div class="carousel-item" data-bs-interval="3000" style="height: 80vh;">
       <%= image_tag "legal.png", class:"img d-block w-100" %>
@@ -41,12 +41,11 @@
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Next</span>
   </button>
-
 </div>
- <div class="image-container" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%=image_path 'frontera.png'%>)">
+ <%# <div class="image-container" style="background-image: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.7)), url(<%=image_path 'frontera.png'%>)"> %>
     <div class="card-container w-75 mx-auto justify-content-center">
       <div id="migrante">
-        <h2 class="h2 mt-4 ms-5 mb-4 text-center">Soy Migrante</h2>
+        <h2 class="h2 mt-4 ms-5 mb-4 text-center" data-aos="fade-down" data-aos-duration="1000">Soy Migrante</h2>
         <div class="row d-flex justify-content-between">
           <div class="ms-5 col-sm-3 mb-3 mb-sm-5">
             <div class="card" data-aos="fade-left" data-aos-duration="3000" >
@@ -78,7 +77,7 @@
         </div>
       </div>
       <div id="ong">
-        <h2 class="h2-ong mt-5 ms-5 mb-4 text-center">Soy ONG</h2>
+        <h2 class="h2-ong mt-5 ms-5 mb-4 text-center" data-aos="fade-down" data-aos-duration="1000">Soy ONG</h2>
         <div class="row d-flex justify-content-between">
           <div class="ms-5 col-sm-3 mb-3 mb-sm-5">
             <div class="card" data-aos="fade-left" data-aos-duration="3000">
@@ -110,7 +109,7 @@
         </div>
       </div>
       <div id="voluntario">
-        <h2 class="h2-vol mt-5 ms-5 mb-4 text-center">Soy Voluntario</h2>
+        <h2 class="h2-vol mt-5 ms-5 mb-4 text-center" data-aos="fade-down" data-aos-duration="1000">Soy Voluntario</h2>
           <div class="row d-flex justify-content-center">
             <div class="ms-5 col-sm-3 mb-3 mb-sm-5">
               <div class="card" data-aos="zoom-in" data-aos-duration="3000">
@@ -132,8 +131,8 @@
             </div>
           </div>
       </div>
-        <h2 class="h2-us mt-5 ms-5 mb-4 text-center">Sobre Nosotros</h2>
-        <div class="last-card mt-4" style="max-width: 1000px;" data-aos="zoom-in" data-aos-duration="3000">
+        <h2 class="h2-us mt-5 ms-5 mb-4 text-center" data-aos="fade-down" data-aos-duration="1000">Sobre Nosotros</h2>
+        <div class="last-card mt-4" style="max-width: 1000px;" data-aos="zoom-in" data-aos-duration="2000">
           <div class="row g-0 d-flex">
           <div class="col-lg-6">
             <%= image_tag "volunteer.png", class:"img-fluid rounded-start" %>
@@ -148,4 +147,3 @@
         </div>
       </div>
     </div>
- </div>

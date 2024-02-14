@@ -92,8 +92,10 @@
 }
 
 .nav-item:hover {
-  text-decoration: underline;
-  color: #ff1053;
+  text-decoration: none;
+  color: white;
+  background-color: #2600e63b;
+  border-radius: 20px;
 }
 
 .btn-outline-success {
@@ -117,3 +119,4 @@
 .btn-form {
   margin-top: 10px;
 }
+

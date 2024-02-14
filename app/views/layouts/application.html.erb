@@ -10,20 +10,28 @@
     <%= javascript_importmap_tags %>
 
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href='https://api.mapbox.com/mapbox-gl-js/v3.1.2/mapbox-gl.css' rel='stylesheet' />
     <link href="https://fonts.googleapis.com/css2?family=ABeeZee&family=Alata&family=Roboto+Mono:wght@300&family=Source+Code+Pro&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <style>
+
+
+    </style>
+
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.11.0/mapbox-gl.css" rel="stylesheet">
 
   </head>
 
   <body>
     <%= render "shared/navbar" %>
     <%= render "shared/flashes" %>
-
+  <div class="image-container" style="background-image: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.9)), url(<%=image_path 'frontera.png'%>)">
     <%= yield %>
-    <div class="footer">
+  </div>
+    <div class="footer pt-2">
       <div class="footer-links mt-3 mb-3">
         <a href="#"><i class="fab fa-github"></i></a>
         <a href="#"><i class="fab fa-instagram"></i></a>
@@ -39,7 +47,7 @@
         </ul>
       </div>
       <div class="logo-footer">
-        <i><%= image_tag "logofooter.png" %></i>
+        <i><%= image_tag "logo.png" %></i>
       </div>
     </div>
   </body>
