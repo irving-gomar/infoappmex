@@ -33,4 +33,5 @@ Rails.application.routes.draw do
   resources :anuncios, only: [:index]
   # Defines the root path route ("/")
   # root "articles#index"
+  get "anuncios", to: "pages#anuncios"
 end
