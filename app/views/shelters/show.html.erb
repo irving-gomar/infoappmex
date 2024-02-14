@@ -1,41 +1,51 @@
-<div class="d-flex justify-content-center text-center">
+<div class="page-container d-flex flex-column justify-content-center m-4">
   <% userid = Ong.find(@shelter.ong_id).user_id %>
-
-  <div style="width: 40vw">
-    <h2 class="card-title m-3"><%= @shelter.name %></h2>
-    <p class="card-text text-justify">
-      <strong>Descripción:</strong> <%= @shelter.description %><br>
-      <strong>Dirección:</strong> <%= @shelter.address %><br>
-      <strong>Capacidad:</strong> <%= @shelter.max_capacity %>
-    </p>
-    <% if current_user.id == userid %>
-    <%= link_to edit_shelter_path(@shelter), class: 'btn btn-primary rounded' do %>
-        Editar refugio
+  <div class="d-flex flex-row justify-content-center mb-4 pb-4">
+    <div style="width: 40vw d-flex flex-column align-items-start">
+      <h2 class="card-title"><%= @shelter.name %></h2>
+      <p class="card-text text-left">
+        <strong>Descripción:</strong> <%= @shelter.description %><br>
+        <strong>Dirección:</strong> <%= @shelter.address %><br>
+        <strong>Capacidad:</strong> <%= @shelter.max_capacity %>
+      </p>
+      <% if current_user.id == userid %>
+      <%= link_to edit_shelter_path(@shelter), class: 'btn btn-primary rounded' do %>
+          Editar refugio
+        <% end %>
+        <!-- Delete link -->
+        <%= link_to shelter_path(@shelter), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: 'btn btn-danger p-2 m-2' do %>
+          Borrar refugio
+        <% end %>
       <% end %>
-      <!-- Delete link -->
-      <%= link_to shelter_path(@shelter), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: 'btn btn-danger p-2 m-2' do %>
-        Borrar refugio
+      <%= link_to ong_path(@shelter.ong), class: 'btn btn-info p-2' do %>
+        Atras
       <% end %>
-    <% end %>
-    <%= link_to ong_path(@shelter.ong), class: 'btn btn-info p-2' do %>
-      Atras
-    <% end %>
-      <!-- Add code here to show shelter's beds with availability status -->
+    </div>
+    <div style="width: 50vw; padding-left: 10vw">
+      <div style="width: 100%; height: 100%;"
+        data-controller="map"
+        data-map-markers-value="<%= @shelter_marker.to_json %>"
+        data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+      </div>
     </div>
   </div>
 
-  <div class="d-flex flex-wrap justify-content-center p-4 m-4">
+  <div class="d-flex flex-wrap justify-content-center w-100">
     
     <% @shelter.beds.each_with_index do |bed, id| %>
-      <div class="p-2 m-2 rounded border border-dark text-center" style="width: 20%; margin-top: auto; margin-bottom: auto">
-        <p style="font-size: 120%">
-          <strong>Cama <%= id+1 %>:</strong><br>
-          <%= bed.status %> <%= button_to 'Reservar', shelter_bookings_path(@shelter, bed_id: bed.id) , class: 'btn btn-lg btn-info btn-lg' if bed.status == "disponible"%>
-          
-          <% if bed.status == "ocupada" && current_user.id == userid %>
-            <%= button_to 'Restaurar', restaurar_path(bed_id: bed.id), class: 'btn btn-lg btn-success btn-lg' %>
-          <% end %>
-        </p>
+      <div class="p-2 m-2 rounded border border-dark text-center d-flex flex-row justify-content-start align-items-center <%= bed.status == "disponible" ? 'bg-disponible' : 'bg-ocupado' %>" style="width: 20%; margin-top: auto; margin-bottom: auto">
+        <%= image_tag  "bed.png", class: "bed", alt: "bed icon" %>
+        <div class="text-left bed-text">
+          <p style="font-size: 120%">  
+            <strong>Cama <%= id+1 %>:</strong><br>
+            <%= bed.status %> 
+            <%= button_to 'Reservar', shelter_bookings_path(@shelter, bed_id: bed.id) , class: 'btn btn-lg btn-info rounded' if bed.status == "disponible" && current_user.role == "Migrante"%>
+            
+            <% if bed.status == "ocupada" && current_user.id == userid %>
+              <%= button_to 'Restaurar', restaurar_path(bed_id: bed.id), class: 'btn btn-lg btn-primary rounded' %>
+            <% end %>
+          </p>
+        </div>
       </div>
     <% end %>
   </div>
