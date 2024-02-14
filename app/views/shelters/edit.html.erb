@@ -1,11 +1,13 @@
-<%= simple_form_for [@ong, @shelter] do |f| %>
-  <%= f.input :name %>
-  <%= f.input :description, as: :text %>
-  <%= f.input :address %>
-  <%= f.input :max_capacity %>
-  <%= f.button :submit %>
-<% end %>
+<div class="container main-box-form mt-4 shadow justify-content-center">
+  <%= simple_form_for [@ong, @shelter] do |f| %>
+    <%= f.input :name %>
+    <%= f.input :description, as: :text %>
+    <%= f.input :address %>
+    <%= f.input :max_capacity %>
+    <%= f.button :submit, class: "btn btn-success btn-form" %>
+  <% end %>
 
-<%= link_to shelter_path(@shelter), class: 'btn btn-info' do %>
-    Volver a ONG
-<% end %>
+  <%= link_to shelter_path(@shelter), class: 'btn btn-info btn-form' do %>
+      Volver a ONG
+  <% end %>
+</div>

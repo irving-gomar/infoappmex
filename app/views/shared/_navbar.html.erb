@@ -16,10 +16,10 @@
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
           <li class="nav-item active">
-            <%= link_to "ONG", "#", class: "nav-link" %>
+            <%= link_to "ONG", ongs_path, class: "nav-link" %>
           </li>
           <li class="nav-item active">
-            <%= link_to "Refugio", "#",  class: "nav-link" %>
+            <%= link_to "Refugio", shelters_path,  class: "nav-link" %>
           </li>
           <li class="nav-item active">
             <%= link_to "Comunidad", "#", class: "nav-link" %>
