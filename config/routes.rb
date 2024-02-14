@@ -30,7 +30,8 @@ Rails.application.routes.draw do
 
   resources :volunteerings, only: [:create]
 
-  resources :anuncios, only: [:index]
+  #resources :anuncios, only: [:index]
+  
   # Defines the root path route ("/")
   # root "articles#index"
   get "anuncios", to: "pages#anuncios"
