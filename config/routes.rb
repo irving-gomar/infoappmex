@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'anuncios/index'
   devise_for :users
   root to: "pages#home"
   get "/profile", to: "pages#profile"
@@ -10,7 +11,7 @@ Rails.application.routes.draw do
   end
 
   resources :shelters, only: [:index, :show, :edit, :update, :destroy] do
-    # resources :beds, only: [:new, :create] 
+    # resources :beds, only: [:new, :create]
     resources :bookings, only: [:new, :create]
   end
 
@@ -22,12 +23,15 @@ Rails.application.routes.draw do
 
 
   resources :bookings, only: [:index, :edit, :destroy]
-  
+
   resources :beds, only: [:show, :edit, :update, :destroy]
 
   resources :services, except: [:new, :create]
 
   resources :volunteerings, only: [:create]
+
+  #resources :anuncios, only: [:index]
+  
   # Defines the root path route ("/")
   # root "articles#index"
   get "anuncios", to: "pages#anuncios"
