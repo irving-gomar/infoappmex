@@ -1,6 +1,6 @@
 <div class="page-container d-flex flex-column justify-content-center m-4">
   <% userid = Ong.find(@shelter.ong_id).user_id %>
-  <div class="d-flex flex-row justify-content-center mb-4 pb-4">
+  <div class="d-flex flex-row justify-content-center mb-4 pb-4 bg-light shadow text-dark">
     <div style="width: 40vw d-flex flex-column align-items-start">
       <h2 class="card-title"><%= @shelter.name %></h2>
       <p class="card-text text-left">
@@ -21,7 +21,7 @@
         Atras
       <% end %>
     </div>
-    <div style="width: 50vw; padding-left: 10vw">
+    <div style="width: 50vw; padding-left: 10vw ">
       <div style="width: 100%; height: 100%;"
         data-controller="map"
         data-map-markers-value="<%= @shelter_marker.to_json %>"
@@ -30,7 +30,7 @@
     </div>
   </div>
 
-  <div class="d-flex flex-wrap justify-content-center w-100">
+  <div class="d-flex flex-wrap justify-content-between w-100 container bg-light">
     
     <% @shelter.beds.each_with_index do |bed, id| %>
       <div class="p-2 m-2 rounded border border-dark text-center d-flex flex-row justify-content-start align-items-center <%= bed.status == "disponible" ? 'bg-disponible' : 'bg-ocupado' %>" style="width: 20%; margin-top: auto; margin-bottom: auto">
@@ -43,7 +43,7 @@
               <%= button_to 'Reservar', shelter_bookings_path(@shelter, bed_id: bed.id) , class: 'btn btn-lg btn-info rounded' if bed.status == "disponible" && current_user.role == "Migrante"%>
             <% end %>
             <% if bed.status == "ocupada" && current_user.id == userid %>
-              <%= button_to 'Restaurar', restaurar_path(bed_id: bed.id), class: 'btn btn-lg btn-primary rounded' %>
+              <%= button_to 'Restaurar', restaurar_path(bed_id: bed.id), class: 'btn btn-lg btn-primary rounded fs6 btn-sm' %>
             <% end %>
           </p>
         </div>
