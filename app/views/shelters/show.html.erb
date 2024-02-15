@@ -39,8 +39,9 @@
           <p style="font-size: 120%">  
             <strong>Cama <%= id+1 %>:</strong><br>
             <%= bed.status %> 
-            <%= button_to 'Reservar', shelter_bookings_path(@shelter, bed_id: bed.id) , class: 'btn btn-lg btn-info rounded' if bed.status == "disponible" && current_user.role == "Migrante"%>
-            
+            <% unless Booking.exists?(user: current_user)%>
+              <%= button_to 'Reservar', shelter_bookings_path(@shelter, bed_id: bed.id) , class: 'btn btn-lg btn-info rounded' if bed.status == "disponible" && current_user.role == "Migrante"%>
+            <% end %>
             <% if bed.status == "ocupada" && current_user.id == userid %>
               <%= button_to 'Restaurar', restaurar_path(bed_id: bed.id), class: 'btn btn-lg btn-primary rounded' %>
             <% end %>
