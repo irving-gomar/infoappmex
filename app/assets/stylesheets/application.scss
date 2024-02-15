@@ -12,8 +12,20 @@
 @import "pages/index";
 
 .main-container {
-  height: calc(100 - 30 - 50);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: black;
 }
+.image-container {
+  flex: 1; /* Hace que el contenido ocupe todo el espacio disponible */
+}
+
 body {
   color: white;
 }
+
+.text-black {
+  color: black;
+}
+
