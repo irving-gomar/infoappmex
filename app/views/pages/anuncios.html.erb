@@ -3,59 +3,168 @@
 
     <div class="row">
       <div class="col-md-4 mb-3">
-        <!-- Tarjeta 1 -->
         <div class="card">
           <div class="card-body">
             <h5 class="card-title">Anuncio 1</h5>
-            <p class="card-text">Comida gratis.</p>
+            <p class="card-text">Comedor comunitario</p>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#popup1">
+              Ver Detalles
+            </button>
           </div>
         </div>
       </div>
-     <div class="col-md-4">
-        <!-- Tarjeta 2 -->
+      <div class="col-md-4 mb-3">
         <div class="card">
           <div class="card-body">
             <h5 class="card-title">Anuncio 2</h5>
-            <p class="card-text">Busco companero de viaje.</p>
+            <p class="card-text">Busco compañero de viaje.</p>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#popup2">
+              Ver Detalles
+            </button>
           </div>
         </div>
       </div>
-           <div class="col-md-4">
-        <!-- Tarjeta 3 -->
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">Anuncio 3</h5>
-            <p class="card-text">Formando caravana para cruzar por mexico.</p>
-          </div>
+      <div class="card col-md-4 mb-3">
+        <div class="card-body">
+          <h5 class="card-title">Anuncio 3</h5>
+          <p class="card-text">Arreglo telefonos Samsung y Huawei.</p>
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#popup3">
+            Ver Detalles
+          </button>
         </div>
       </div>
-           <div class="col-md-4">
-        <!-- Tarjeta 4 -->
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">Anuncio 4</h5>
-            <p class="card-text">Vendo telefono Huawei.</p>
-          </div>
+      <div class="card col-md-4 mb-3">
+        <div class="card-body">
+          <h5 class="card-title">Anuncio 4</h5>
+          <p class="card-text">Se organiza caravana de migrantes.</p>
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#popup4">
+            Ver Detalles
+          </button>
         </div>
       </div>
-           <div class="col-md-4">
-        <!-- Tarjeta 5 -->
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">Anuncio 5</h5>
-            <p class="card-text">Busco catre o cama plegable.</p>
-          </div>
+      <div class="card col-md-4 mb-3">
+        <div class="card-body">
+          <h5 class="card-title">Anuncio 5</h5>
+          <p class="card-text">Busco muebles usados.</p>
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#popup5">
+            Ver Detalles
+          </button>
         </div>
       </div>
-           <div class="col-md-4 mb-3">
-        <!-- Tarjeta 6 -->
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">Anuncio 6</h5>
-            <p class="card-text">En busca de apartaestudio.</p>
-          </div>
+      <div class="card col-md-4 mb-3">
+        <div class="card-body">
+          <h5 class="card-title">Anuncio 6</h5>
+          <p class="card-text">Arriendo de apartamento en Nogales.</p>
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#popup6">
+            Ver Detalles
+          </button>
         </div>
       </div>
-
     </div>
   </div>
+
+  <div class="modal fade" id="popup1" tabindex="-1" role="dialog" aria-labelledby="popup1Label" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="popup1Label">Anuncio 1</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>Comedor comunitario organizado por la Parroquia de Tapachula, este domingo 18 de febrero de 12 a 2 pm.</p>
+          <%= image_tag "comida.png", class:"img d-block w-100" %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="popup2" tabindex="-1" role="dialog" aria-labelledby="popup2Label" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="popup2Label">Anuncio 2</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>Busco compañero de viaje para el trayecto Tenosique hasta Reynosa.  Soy Hondureño, de 22 años. Mi numero es +504.123.456.789.</p>
+          <%= image_tag "amigos.png", class:"img d-block w-100" %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="popup3" tabindex="-1" role="dialog" aria-labelledby="popup2Label" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="popup2Label">Anuncio 3</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>Hola! Soy migrante y busco ganarme unos pesitos.  Yo te puedo arreglar tu telefono por tan solo $150!  Estoy ubicado en el mercado central de Ciudad Juarez, mi telefono es +5257890123.</p>
+          <%= image_tag "telefonos.png", class:"img d-block w-100" %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="popup4" tabindex="-1" role="dialog" aria-labelledby="popup2Label" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="popup2Label">Anuncio 4</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>Se organiza caravana de migrantes, saliendo de CDMX-Zocalo hasta Nuevo Laredo, el lunes 19 de febrero 2024.</p>
+          <%= image_tag "caravana.png", class:"img d-block w-100"  %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="popup5" tabindex="-1" role="dialog" aria-labelledby="popup2Label" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="popup2Label">Anuncio 5</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>Busco muebles usados: cama individual, sofa, comedor y sillas.  Estoy en Tijuana, tel: +5258903456.</p>
+          <%= image_tag "muebles.png", class:"img d-block w-100" %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="popup6" tabindex="-1" role="dialog" aria-labelledby="popup2Label" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="popup2Label">Anuncio 6</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>Arriendo de apartamento en Nogales, 5 habitaciones con 3 baños y concina. Mas detalles al +52.86345910.</p>
+          <%= image_tag "depa.png", class:"img d-block w-100" %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
