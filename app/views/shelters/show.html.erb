@@ -1,4 +1,4 @@
-<div class="page-container d-flex flex-column justify-content-center m-4">
+<div class="page-container d-flex flex-column justify-content-center m-4" style="background-color: #FFFFE4">
   <% userid = Ong.find(@shelter.ong_id).user_id %>
   <div class="d-flex flex-row justify-content-center mb-4 pb-4 bg-light shadow text-dark">
     <div style="width: 40vw d-flex flex-column align-items-start">
@@ -30,10 +30,10 @@
     </div>
   </div>
 
-  <div class="d-flex flex-wrap justify-content-between w-100 container bg-light">
+  <div class="d-flex flex-wrap justify-content-center w-100 container">
     
     <% @shelter.beds.each_with_index do |bed, id| %>
-      <div class="p-2 m-2 rounded border border-dark text-center d-flex flex-row justify-content-start align-items-center <%= bed.status == "disponible" ? 'bg-disponible' : 'bg-ocupado' %>" style="width: 20%; margin-top: auto; margin-bottom: auto">
+      <div class="p-2 m-2 rounded border border-dark text-center d-flex flex-row justify-content-start align-items-center <%= bed.status == "disponible" ? 'bg-disponible' : 'bg-ocupado' %> shadow" style="width: 20%; margin-top: auto; margin-bottom: auto">
         <%= image_tag  "bed.png", class: "bed", alt: "bed icon" %>
         <div class="text-left bed-text">
           <p style="font-size: 120%">  
