@@ -1,5 +1,5 @@
 
-<div class="container main-box mt-4 shadow justify-content-center">
+<div class="container main-box mt-4 shadow justify-content-center text-white">
   <div class="row">
     <div class="col-md-4">
       <div class="text-center" style="overflow: hidden; margin: auto">
@@ -17,16 +17,16 @@
 
           <% if current_user.id == @ong.user_id %>
 
-            <%= link_to edit_ong_path(@ong), class: 'btn btn-success bg-white p-3 text-decoration-none m-1' do %>
+            <%= link_to edit_ong_path(@ong), class: 'btn btn-success bg-white  text-decoration-none m-1 btn-sm' do %>
               Editar
             <% end %>
 
             <!-- Delete link -->
-            <%= link_to ong_path, data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: 'btn btn-success bg-white text-decoration-none p-3 m-1' do %>
+            <%= link_to ong_path, data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: 'btn btn-success bg-white text-decoration-none m-1 btn-sm' do %>
               Borrar
             <% end %>
 
-            <%= link_to new_ong_service_path(@ong), class: 'btn btn-success p-3 text-decoration-none m-1' do %>
+            <%= link_to new_ong_service_path(@ong), class: 'btn btn-success text-decoration-none m-1 btn-sm' do %>
               Nuevo Servicio
             <% end %>
 
@@ -34,7 +34,7 @@
           </div>
         
         </div>
-        <div class="container2-2">
+        <div class="container2-2 ">
           <% @ong.services.each do |servicio| %>    
             <div class="card card-hover">
               <div class="card-body">
@@ -52,7 +52,7 @@
   <div>
     <div class="m-4">
       <%= link_to ongs_path, class: 'btn btn-info' do %>
-        Back
+        Volver
       <% end %>
     </div>
     <div>

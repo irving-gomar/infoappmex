@@ -16,39 +16,19 @@
     <link href='https://api.mapbox.com/mapbox-gl-js/v3.1.2/mapbox-gl.css' rel='stylesheet' />
     <link href="https://fonts.googleapis.com/css2?family=ABeeZee&family=Alata&family=Roboto+Mono:wght@300&family=Source+Code+Pro&display=swap" rel="stylesheet">
 
-    <style>
-
-
-    </style>
-
-    <link href="https://api.mapbox.com/mapbox-gl-js/v2.11.0/mapbox-gl.css" rel="stylesheet">
-
   </head>
 
   <body>
-    <%= render "shared/navbar" %>
-    <%= render "shared/flashes" %>
-  <div class="image-container" style="background-image: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.9)), url(<%=image_path 'frontera.png'%>)">
-    <%= yield %>
-  </div>
-    <div class="footer pt-2">
-      <div class="footer-links mt-3 mb-3">
-        <a href="#"><i class="fab fa-github"></i></a>
-        <a href="#"><i class="fab fa-instagram"></i></a>
-        <a href="#"><i class="fab fa-facebook"></i></a>
-        <a href="#"><i class="fab fa-twitter"></i></a>
+    <div class="main-container">
+      <%= render "shared/navbar" %>
+      <%= render "shared/flashes" %>
+      <div class="image-container" style="background-image: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.9)), url(<%=image_path 'frontera.png'%>)">
+        <%= yield %>
       </div>
-      <div class="footer-menu d-flex mx-auto">
-        <ul>
-        <li><%= link_to 'Inicio', ongs_path %></li>
-        <li><%= link_to 'Comunidad', ongs_path %></li>
-        <li><%= link_to 'Servicios', ongs_path %></li>
-        <li><%= link_to 'Refugio', ongs_path %></li>
-        </ul>
-      </div>
-      <div class="logo-footer">
-        <i><%= image_tag "logo.png" %></i>
-      </div>
+      <br>
+      <br>
+      <%= render 'shared/footer' %>
     </div>
+
   </body>
 </html>

@@ -10,6 +10,7 @@ class BookingsController < ApplicationController
     bed = Bed.find(bedid)
     if booking.save
       bed.update(status: "ocupada")
+      redirect_to bookings_path
     else
       render :new
     end
@@ -26,7 +27,8 @@ class BookingsController < ApplicationController
         bkn.destroy
       end
     end
-    head :no_content
+    # head :no_content
+    redirect_to shelter_path(bed.shelter_id)
   end
 
   def my_bookings
