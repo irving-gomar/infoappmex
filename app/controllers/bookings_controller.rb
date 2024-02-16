@@ -27,7 +27,8 @@ class BookingsController < ApplicationController
         bkn.destroy
       end
     end
-    head :no_content
+    # head :no_content
+    redirect_to shelter_path(bed.shelter_id)
   end
 
   def my_bookings
