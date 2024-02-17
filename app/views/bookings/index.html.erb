@@ -2,13 +2,12 @@
   <h1>Mis reservas</h1>
   <% @bookings.each do |booking| %>
     <div>
-      <%= booking %>
-      <p>ONG: <%= booking.bed.shelter.ong %></p>
-      <p>Shelter: <%= booking.bed.shelter %></p>
+      <%= booking.date %>
+      <p>ONG: <%= booking.bed.shelter.ong.name %></p>
+      <p>Shelter: <%= booking.bed.shelter.name %></p>
       <%= link_to shelter_path(booking.bed.shelter), class: 'btn btn-info' do %>
         Ver Refugio
       <% end %>
     </div>
   <% end %>
-  <p>hello</p>
 </div>

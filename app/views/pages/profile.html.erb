@@ -1,9 +1,11 @@
-<%= current_user.email %>
-<%= current_user.role %>
-<ul>
-  <% current_user.services.each do |service| %>
-    <li>
-      <%= service.name %>
-    </li>
-  <% end %>
-</ul>
+  <div class="container text-white">
+    <%= current_user.email %>
+    <%= current_user.role %>
+    <ul class="list-group">
+      <% current_user.services.each do |service| %>
+        <li class="list-group-item">
+          <%= service.name %> <%= service.description %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
